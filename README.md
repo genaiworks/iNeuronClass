@@ -334,3 +334,191 @@ Attention
 References:
 https://www.scaler.com/topics/nlp/gpt-versions/
 https://magazine.sebastianraschka.com/p/understanding-large-language-models
+
+Class April 28 
+
+Classical ML/DL Pipeline:
+    Training:
+        Data Ingestion
+        Data Processing
+        Model Building
+        Model Evaluation
+    Prediction
+        Model is used to predict the answer
+    Model Building:
+        Supervised Learning:
+            Regression
+                Numerical
+            Classification
+                Categorical
+        UnSupervised Learning
+            Clustering
+    Here we have to train model for every type of task.
+
+ChatBot/LLM Based Application
+    Chat GPT /Model is GPT
+    Google Bard/ Model is Gemini
+    Meta Llama 2/Llama2 and Llama3
+
+Generative AI:
+    Generates new data based on training sample.  Generative model can generate Image, Text, Audio, Video etc data as output.
+
+Homogeneous Model
+    Text->Text (GPT 3.5)
+    Image->Image (Stable Diffusion)
+MultiModel/Heterogenous Model
+    Text->Image (Dalle)
+    Image->Text (Gemini Pro)
+    Video and Audio can also be converted to text or images.
+
+Generative Image Model:
+    Before GAN: We can create images AND Autoencoder: Generate data
+Generative Language Model
+
+LLM:
+    LLM before was capable of generate text.  Now we can generate images using
+    Dalle/Stable Diffusion/Midjourney
+
+
+Classical:
+    Discriminative Model: 
+        Here we are going to discriminate between classes.
+        Here we are going to classify.
+Now 
+    Generative Model
+        Here we are going to generate output.
+
+Generative AI:  Here we generate the data.
+    Data Ingestion
+    Preprocessing
+    Model Building:
+        We NEVER train the model from scratch.
+        We apply TRANSFER LEARNING
+        Fine Tuning regarding the model building.
+    Model Evaluation
+    Here we are generating something.
+    Music ---> Generative Model ---> Generate NEW Music
+
+Generative AI Training in 2 steps
+1. UnSupervised Pre Training:
+    Here we first perform unsuprvised learning. Generative AI uses LLM to generate something.  Here we ALWAYS generate something.
+2. Supervised Fine Tuning
+    Then we apply supervised fine turning to generate domain specific data.
+
+GenAI: 
+    AI has capability to generate something.
+    Here we are talking about unstructured data.
+NLP/UseCases:
+    After training of RNN/GRU/LSTM we have LM
+    Here we are processing the language.  Model is for LM.
+        Text Classification
+        Text Generation
+        Summarization
+        Chatbot
+        QA
+        Translation
+LLM:
+    LM:
+        Training LM for any task
+
+        Predict
+
+From LM ------> LLM
+    LM: we have to train from scratch, here we need different model for each of these tasks:
+        Text Classification/LSTM
+        Text Generation/Diffusion
+        Summarization
+        Chatbot
+        QA
+        Translation
+    LLM: we can use the pretrained model.  Apply the transfer learning.
+        Here in LLM single model can perform ALL these tasks:
+        Text Classification
+        Text Generation
+        Summarization
+        Chatbot
+        QA
+        Translation
+
+SELF ATTENTION: 
+    Using these two papers
+        Transformer Paper
+        ULMFit Paper
+    LLM is created
+
+RNN/LSTM/GRU + Attention                               Transformer
+Sequence data entry                                   Parallel data entry
+Here we cannot process                                Huge/Larger data processing
+Huge/Larger Sequence                                  Due to Self ATTENTION
+RNN/LSTM/GRY has feedback loop                        SELF ATTENTION IS NOT COMPLEX
+Architecture is COMPLEX                               Here we have special type of                                                    embedding that can keep the                                                   relationshop
+                                                      Transfer Learning
+                                                      Finetuning
+
+Because of common feature computer vision transfer learning was possible.
+In NLP
+    text classification/QA/Summarization ALL TASKS were different.  Task diversity was different.  Here we are not able to achieve same model for all tasks.  Therefore NOT able to create pretrained model.
+
+LM these tasks:
+    Next word generation
+    Next sentence generation
+ULMFit:
+    Unsupervised Pretraining
+    Supervised Finetuning
+Transformer:
+    Capability to process data fast
+    Can take the longer sentences also
+LM using the two paper to solve above tasks, LM for next word genereration and next sentence generation
+
+LLM
+    BERT
+    GPT
+    T5
+LM these tasks:
+    Next word generation
+    Next sentence generation 
+These two task help model to learn the language.
+
+LLM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
