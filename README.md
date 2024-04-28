@@ -480,6 +480,58 @@ LM these tasks:
 These two task help model to learn the language.
 
 LLM
+    Knows about the language.  Can perform any kind of task.  It is AWARE about the pattern of the data.
+    Here are training on HUGE amount of data, model is trained of huge amount of parameters.
+
+    Llama == 3B params, here we have 3B trainable weights.
+    Every connection of NN link has one weight 
+        Parameters = Number of Weight + Bias (ouput to get generalized value)
+
+    Parameters are trained by themselves.
+
+    GPT-3 175 billion parameters
+
+Tranformer Architecture:
+    Only has Feed forward network No LSTM/GRU etc
+
+Transformers
+Encoder:
+    Text Summarization
+    Text Classification
+
+Decoder:
+    Generation
+
+BOTH Encoder + Decoder:
+    Translation
+
+Model we enter:
+    Text enter to LLM is called prompt along with input to help.
+    Prompt for context + Input
+    Based on context we ask questions to get the response
+Prompt Designing:
+    Zero Shot Prompt
+
+    Few Shot Prompt
+    
+ChatGPT Trained:
+    Generative Pre Training
+    Supervised Fine Tuning
+    Reinforcement Learning through human feedback (RLHF)
+
+RAW PRETRAINED:
+    Find pattern inside the data
+    collected data ---> Unsupervised pretraining (Catch pattern from the data)-->Predict the next word in the context window --->Teaching the model in the context window.--> When similarity found it is captured.  Between sentences try to find the similarity.
+FINE TUNING ON RAW DATA
+
+SUPERVISED FINE TUNING
+    SELF ATTENTION:
+        Means find pattern in the sentence itself.  Based on context window apply self attention.  We are predicting next word.  And also segregating the pattern.
+    SIMILARITY:
+        Which word is similar to which other word.
+    How efficiently we can predict the next word.
+
+
 
 
 
