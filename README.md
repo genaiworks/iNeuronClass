@@ -534,6 +534,478 @@ SUPERVISED FINE TUNING
 
 
 
+May 5
+
+Documentation of OpenAI
+https://platform.openai.com/docs/models/
+
+Roles
+    user/I/We
+    assistant/LLM/generate response
+    system/behavior of LLM/behavior of model
+
+Playground
+    https://platform.openai.com/playground/chat
+
+
+
+May 11
+FineTuning
+    FullFineTuning
+    PEFT/Parameter Efficient Fine Tuning
+
+RAG:
+Embeddings:
+    Numerical repressentation of data based on certain feature.
+    Query-Embeddings-Similarity Search
+
+Similarity Search:
+    Cosine Similarity
+    Jaccard Simiarlity
+    Dot Product
+
+Embeddings:
+    Set of numerical values/vectors
+Find similarity between 2 vectors
+
+Embedding Vectors:
+    Stored in Vector DB
+
+Vecor DB:
+    User Query:
+        Rank Results:
+        Data from 
+
+Few Shot Prompting:
+    Prompt + Ranked Results
+
+
+Retrieval Augument Generation
+Ingestion (Store data in Vector DB) ---> Retrival (get data from Vector DB) ---> Generation 
+RAG:
+    Connect data from external database.
+
+Rank Result:
+    Retrieve most similar results.
+
+FineTuning:
+
+Forward Pass:
+    Dot Product
+    Activation Function
+    Loss Function
+
+Backward Pr
+    Optimimzer :
+        Is responsible to update weights
+            Gradient Descent
+            RMS Prop
+            Adam
+            Adagrad
+
+Trainable Parameters:
+
+Reinforcement Learning
+
+
+GPT-4:
+    1.78 Trillion (100 Billion = 1 Trillion = 12 zeros)
+
+Mistral:
+    Conversation Model
+
+LLama:
+    
+
+Mistral + LLaMA + Gemini  can be finetrained.
+But GPT4 cannot be finetuned.
+
+NN Architecture +
+Parameter: Trainable Parameters:
+     Weights and Biases
+     Parameter trained in backpropagation.
+    
+FineTuning:
+    Retrain paramerters of network.  Retrain weights and biases, it rquarters lot of resources.
+    Important for domain specific challenges.
+    Retrain ENTIRE parameters:
+        Full FineTuning
+    PEFT:
+        Train subset of parameters.
+
+RAG:
+    external data source we connect
+
+Combined Approach:
+    FineTuning and RAG
+    First finetune then create RAG application.
+
+To get flipcart product scraping
+    WebScraping using beautifulsoup
+    Inside review entire html content.  We want to remoe tag.
+
+On top of clean data we create RAG:
+
+
+MAY 12
+Vectors:
+    Set of numbers
+    Coordinates of point Vector =[5,8] Actual distance magnitude
+    distance:
+        Euclidean distance:
+            distance = sqrt((y2 - y1) + (x2 - x1))
+        Magnitude + Direction
+
+    House Pricing:
+        Number of bedroom
+        House plot size
+        Location
+        Vector = Dimension of data = Features = Number of bedroom + House plot size + Location
+        Vector = 1 dimensional Array
+
+    Matrix:
+        Vectors of 2 dimensional
+    Tensors:
+        Vectors of N dimensions
+Encoding :
+    1. Frequency based Encoding:
+        Stemming
+
+    2. Neural Network Based Embedding:
+        Lemmitization
+
+Embeddings:
+    Vector Embedding
+    glove
+    Word2Vec
+        NN
+    ELMO
+        NN
+    BERT Embedding:
+        Based on Transformer Architecture
+
+ChatGPT:
+        We are passing prompts---> Encoding (Numeric representation of data) --->Decoding
+
+
+Similarity Search:
+    Similarity Search between vectors
+    2 Dimensional representation
+        apple [0,1]
+        iphone [1,0]
+    3 Dimensional representation:
+        apple [0,1,0]
+        iphone [1,0,0]
+
+Vector dimension:
+    1024 ==> Number of axis ===> Number of features
+
+Similarity Search:
+    Dot Product:
+        apple [0,1]
+        iphone [1,0]
+        0*1 + 1*0 = Similarity using dot product
+    
+    Cosine Similarity:
+        We search the angle between 2 values:
+            if angle is 90 degree: Then cosine of 90 =0
+
+        Cosine Similarity = (A vector * B vector )/()
+
+        Jaccard Similarity
+
+PineCone:
+    Generate embeddign using Neural Network
+    Vector Database
+        Cosine
+        Dot Product
+        Euclidean
+    Some distance good for big data some for small data etc.
+
+BERT Embeddings:
+
+Corpus:
+    Documents
+
+Frequency Based Techniques:
+    1. Hot Embeddings
+
+    2. Bag of Words
+
+
+    3. TF/IDF
+
+
+   4. N-grams
+
+
+Unique Words From Corpus:
+    Vocabulary
+    Dimension = Vocabulary
+
+Sentence Tokenizer
+
+1 Hot Encoding:
+    0,1===> 0 if not found else 1
+    Each word as dimension
+    watch [0,0,1,0,0]
+    people [1,0,0,0]
+
+
+LangChain:
+    Sentence Tokenizer:
+        Convert the data into sentences
+        Document is converted into sentence
+        Sentence will have vocabulary
+        Then perform encoding based on the data.
+
+Disadvantage
+    1 hot encoding:
+        Disadvantage
+            is huge dimension/Sparse matrix
+            It cannot sustain any kind of context
+
+Document-->Vocabulary
+
+Bag of words:
+    Frequency base method
+    Create unique words from vocabulary:
+    Each word frequency is captured for each sentence in the document.  
+    We will write frequency of each word in the document.
+    Advantage:
+        Simple and can sustain some context.  Only sustain few context not all.
+
+    Disadvantage:
+        It is Sparse matrix.  If size of vocabulary is too long then it is going to be sparse.
+        Sparse (More Zeros)
+        Not able to handle out of vocabulary.
+
+
+    First create the vocabulary
+    Based on the document we calculate frequncy for each sentence.
+
+N-grams:
+    N=2,3,...
+    Unigram= 1 == Bag of words
+    N = 1 {people, watch, ineuran, write, comment}
+    N= 2 Bigram 
+        Here we create pair of 2 (pair of 2 unique words)
+        Vocabulary with unique number of words.
+        N = 2 {people watch, watch ineuran, people write,write comment, ineuron write}
+    N=3 Trigram
+        N = 3 {people watch ineuron, comment ineuron write}
+       3 words together we are capturring the CONTEXT
+
+    Adv:
+        Capture more context
+        Reduce ambiguity
+
+Encoding:
+    We create fequency manually then it is called encoding.
+
+Embedding:
+    This is done by neural networks. If we geneaate numerical value using the neural network then we call embedding
+
+Decode:
+    Word from number array
+
+Word2Vec
+
+TF/IDF:
+    TF: Term Frequency
+    IDF: Inverse Document Fequency: What is word occurence at document level
+
+    TF = Number of occurrence of the word in given document/ total number of words in the document
+    IDF = log(Total number of documents/Number of document which contain that term) 
+
+    TF* IDF:
+        IT has more context
+
+Stemming:
+    Convert word into root words
+
+nltk.stem import PorterStemmer
+    Do/Done/Doing===> Do (Root word)
+
+Stemming Lamitization
+
+Word Embeddings
+
+
+BERT
+
+ELMO
+
+May 18, 2024
+
+Text Encoding:
+
+Word embedding:
+    Word2Vec:
+
+BERT Embedding
+
+Embeddings: 
+    Embedding is mathematical model that converts data into set of numbers/vectors.
+Vector Similarity
+
+Embeddings:
+    Word2Vect
+
+Pipeline:
+    Collect Data
+    PreProcess data/clean data if required.
+    Create model from data
+    Evaluate this model
+
+Text->Convert into encoded format (Embedding of the data)
+
+Decoding of numbers to get the text.
+
+Word2Vec:
+    Use NN to fetch the vector.  Convert word-->vector.
+    Capture semantic meaning of the data.
+    Convert data from higher dimension to lower dimension.
+    It reduces the sparcity and gives us dense data.
+
+    CBow
+    SkipGram
+
+    2 models of Word2Vec
+    1. Custom model
+    2. Pretrain model:  
+        Trained on google news article.
+        3 billion tokens/word
+        300 features vector
+        300 dimension of the data.
+
+    Vector = magnitude/distance from origin + direction
+    Distance = Euclidenan Distance = sqrt(sq(x1-x2)+sq(y1-y2))
+
+Similarity of the vectors:
+    1. Dot Product:
+    2. Cosine Similarity:
+        Cosine(90) = 0
+    3. Euclidean Distance
+        sqrt(sq(x1-x2)+sq(y1-y2))
+
+    RAG uses similarity search to find similarity between vectors.
+
+    Similarity search beween vector using above methods.
+
+    Can perform arithmetic operation on these vectors.
+
+    Dimensions represents features.
+
+    On vectors we can perfom arithmatic operations.
+
+    King - Man + Worman = Queen
+
+Word2Vec:
+    Features:
+
+
+How word to word created in the NN:
+    How to create features automatically.  We use NN to create features.
+
+Use trained weight of the NN to create embeddings.  NN is use to create features.
+
+Finetuning
+CBow: Continuous Bag of Words:
+    Context Window:
+    Target
+    X = Input Text length
+    Y = Output Text length
+
+    Context Window:
+    if window = 3:
+    Input Variable/Context Window:
+        Take 3 words in the sentence, slide the window...
+    Target Variable
+        Middle word will be target word
+    Create NN by using this data.
+
+NN:
+Forward Pass:
+Loss
+Backpropogation:
+    Use optimizer we will optimize the weights
+If loss is mininum:
+    We will have optimzied loss
+
+LAST LAYER OF NETWORK:
+    LAYER JUST before the output layer is EMBEDDING
+
+
+Input
+    One Hot encoded vector for each word is connected to hidden layer.
+
+Hidden Layer
+
+Output
+
+CBOW: Coninusous skipgram model.  Skipgram predict surrounding word given the context.
+
+May 19, 2024
+Word Embedding Model
+
+Other Embedding
+
+Transformer Model/Attention is All You Need
+
+Python Code Attention is All You Need
+
+HuggingFace
+    Loading OpenSource Model
+    Inferencing
+    FineTuning Different Model
+
+Translation
+Summarization
+
+Quantization
+    GGML, GGVF... 
+Word2Vec:
+
+
+HuggingFace
+
+ChatBot With Deployment
+
+Word2Vec
+    Collected news article, they trained word2vect.  Trained NN.
+    If we give any word that is NOT there then cannot generate embedding.
+    So we can finetune on our own dataset. e.g. C++ not present
+
+FineTuning:
+    Get data from the internet
+    Train Word2Vec using the data.
+    From Kaggle we collect data.
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
